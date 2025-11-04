@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Sounds - Echo Station</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:ital,wght@0,400;0,600;1,400&family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="w3-bar w3-transparent" id="main-nav" role="navigation">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+            <a class="logo w3-bar-item" href="index.html" aria-label="Echo Station home">
+                <strong class="letter-loose">Echo Station</strong>
+            </a>
+            <button class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" aria-expanded="false" aria-controls="mobileMenu" id="menuToggle">Menu</button>
+            <nav class="w3-bar-item w3-hide-small" aria-label="Primary">
+                <a class="w3-bar-item nav-link" href="index.html">Home</a>
+                <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+                <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+                <a class="w3-bar-item nav-link" href="community.html">Community</a>
+                <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+            </nav>
+        </div>
+        <div id="mobileMenu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium glass">
+            <a class="w3-bar-item nav-link" href="index.html">Home</a>
+            <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+            <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+            <a class="w3-bar-item nav-link" href="community.html">Community</a>
+            <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <section class="wall wall--brick grain section" aria-label="Station Sounds header">
+            <div class="container">
+                <h1 class="graffiti-title spray-soft jitter">STATION SOUNDS</h1>
+                <p class="graffiti-sub spray-soft">Every tape tells a story waiting to be heard</p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="mix-title">
+            <div class="container">
+                <h2 id="mix-title" class="section-title">Mixtapes</h2>
+                <div class="tape-grid">
+                    <article class="tape" data-type="playlist" data-title="late night warmth" data-mood="quiet indie / soft nostalgia" data-image="assets/images/playlists/cover-1.jpg">
+                        <div class="art"><img src="assets/images/playlists/cover-1.jpg" alt="Cassette tape cover art: warm golden tones, late night atmosphere"></div>
+                        <div class="label">late night warmth</div>
+                        <div class="mood emotional">quiet indie / soft nostalgia</div>
+                        <div class="play-arrow">▶</div>
+                    </article>
+                    <article class="tape" data-type="playlist" data-title="rain window ambience" data-mood="for the last train home" data-image="assets/images/playlists/cover-2.jpg">
+                        <div class="art"><img src="assets/images/playlists/cover-2.jpg" alt="Cassette tape cover art: rain-streaked window, blue-grey tones"></div>
+                        <div class="label">rain window ambience</div>
+                        <div class="mood emotional">for the last train home</div>
+                        <div class="play-arrow">▶</div>
+                    </article>
+                    <article class="tape" data-type="playlist" data-title="station lights" data-mood="dim platforms, warm echoes" data-image="assets/images/playlists/cover-3.jpg">
+                        <div class="art"><img src="assets/images/playlists/cover-3.jpg" alt="Cassette tape cover art: dim station platform lights, soft neon glow"></div>
+                        <div class="label">station lights</div>
+                        <div class="mood emotional">dim platforms, warm echoes</div>
+                        <div class="play-arrow">▶</div>
+                    </article>
+                    <article class="tape" data-type="playlist" data-title="analog hum" data-mood="tape hiss and gentle chords" data-image="assets/images/playlists/cover-4.jpg">
+                        <div class="art"><img src="assets/images/playlists/cover-4.jpg" alt="Cassette tape cover art: analog textures, warm tape hiss aesthetic"></div>
+                        <div class="label">analog hum</div>
+                        <div class="mood emotional">tape hiss and gentle chords</div>
+                        <div class="play-arrow">▶</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container pad-l">
+            <p class="cta">End of the line? <a href="map.html">Explore the Station Map →</a></p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="globalModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal" role="document">
+            <button class="modal-close" aria-label="Close" data-modal-close>✕</button>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

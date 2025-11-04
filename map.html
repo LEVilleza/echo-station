@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Map - Echo Station</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:ital,wght@0,400;0,600;1,400&family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="w3-bar w3-transparent" id="main-nav" role="navigation">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+            <a class="logo w3-bar-item" href="index.html" aria-label="Echo Station home">
+                <strong class="letter-loose">Echo Station</strong>
+            </a>
+            <button class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" aria-expanded="false" aria-controls="mobileMenu" id="menuToggle">Menu</button>
+            <nav class="w3-bar-item w3-hide-small" aria-label="Primary">
+                <a class="w3-bar-item nav-link" href="index.html">Home</a>
+                <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+                <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+                <a class="w3-bar-item nav-link" href="community.html">Community</a>
+                <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+            </nav>
+        </div>
+        <div id="mobileMenu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium glass">
+            <a class="w3-bar-item nav-link" href="index.html">Home</a>
+            <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+            <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+            <a class="w3-bar-item nav-link" href="community.html">Community</a>
+            <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <section class="wall wall--brick grain section" aria-label="Map header">
+            <div class="container">
+                <h1 class="graffiti-title spray-soft">The Evening Line</h1>
+                <p class="emotional">Follow the track — from sound to story to connection.</p>
+                <p class="muted">every stop holds a new voice, a new memory</p>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Metro map">
+            <div class="container map-wrap">
+                <svg class="metro" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-label="Metro map showing stations along the Evening Line">
+                    <defs>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <g stroke-linecap="round" filter="url(#glow)">
+                        <path class="line" d="M80 320 C 220 240, 380 240, 520 160 S 720 80, 720 120"/>
+                    </g>
+                    <g class="stations" fill="none">
+                        <g class="station" data-href="index.html" data-label="Terminal" data-mood="The first stop on a journey through sound">
+                            <circle class="node pulse" cx="80" cy="320" r="8"/>
+                            <text class="station-label" x="55" y="342">TERMINAL</text>
+                        </g>
+                        <g class="station" data-href="playlists.html" data-label="Station Sounds" data-mood="Mixtapes for passing lights">
+                            <circle class="node" cx="360" cy="225" r="8"/>
+                            <text class="station-label" x="308" y="250">STATION SOUNDS</text>
+                        </g>
+                        <g class="station" data-href="artists.html" data-label="Platform Six" data-mood="Voices behind the songs">
+                            <circle class="node" cx="520" cy="160" r="8"/>
+                            <text class="station-label" x="488" y="182">PLATFORM SIX</text>
+                        </g>
+                        <g class="station" data-href="community.html" data-label="The Station Wall" data-mood="Stories on quiet rails">
+                            <circle class="node" cx="720" cy="120" r="8"/>
+                            <text class="station-label" x="660" y="142">THE STATION WALL</text>
+                        </g>
+                    </g>
+                </svg>
+                <div id="mapCard" class="map-card" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <center>
+        <footer class="site-footer">
+            <div class="container pad-l">
+                <p class="cta emotional">End of the line? just wait — another train is always coming.</p>
+            </div>
+        </footer>
+    </center>
+
+    <div class="modal-overlay" id="globalModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal" role="document">
+            <button class="modal-close w3-button" aria-label="Close" data-modal-close>✕</button>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

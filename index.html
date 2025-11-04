@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal - Echo Station</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:ital,wght@0,400;0,600;1,400&family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="w3-bar w3-transparent" id="main-nav" role="navigation">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+            <a class="logo w3-bar-item" href="index.html" aria-label="Echo Station home">
+                <strong class="letter-loose">Echo Station</strong>
+            </a>
+            <button class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" aria-expanded="false" aria-controls="mobileMenu" id="menuToggle">Menu</button>
+            <nav class="w3-bar-item w3-hide-small" aria-label="Primary">
+                <a class="w3-bar-item nav-link" href="index.html">Home</a>
+                <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+                <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+                <a class="w3-bar-item nav-link" href="community.html">Community</a>
+                <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+            </nav>
+        </div>
+        <div id="mobileMenu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium glass">
+            <a class="w3-bar-item nav-link" href="index.html">Home</a>
+            <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+            <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+            <a class="w3-bar-item nav-link" href="community.html">Community</a>
+            <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <section class="hero" aria-label="Hero">
+            <video class="bg" autoplay playsinline muted loop poster="assets/images/hero-fallback.jpg">
+                <source src="assets/video/hero-train.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+            <div class="content">
+                <h1 class="title text-glow parallax" data-parallax="0.15">Echo Station</h1>
+                <p class="subtitle parallax" data-parallax="0.12">Where indie sounds meet late-night dreams</p>
+                <div class="ctas reveal">
+                    <a href="map.html" class="cta-btn">Explore the Map</a>
+                    <a href="#featured-playlists" class="cta-btn cta-secondary">Start Listening</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-playlists" class="section reveal" aria-labelledby="pl-title">
+            <div class="container">
+                <h2 id="pl-title" class="section-title">Featured Playlists</h2>
+                <div class="scroller">
+                    <article class="playlist-card card">
+                        <div class="playlist-cover">
+                            <img src="assets/images/playlists/cover-1.jpg" alt="Cassette tape cover art: warm golden tones, late night atmosphere">
+                            <div class="playlist-play">▶</div>
+                        </div>
+                        <div class="playlist-title">late night warmth</div>
+                        <div class="playlist-mood emotional">quiet indie / soft nostalgia</div>
+                    </article>
+                    <article class="playlist-card card">
+                        <div class="playlist-cover">
+                            <img src="assets/images/playlists/cover-2.jpg" alt="Cassette tape cover art: rain-streaked window, blue-grey tones">
+                            <div class="playlist-play">▶</div>
+                        </div>
+                        <div class="playlist-title">rain window ambience</div>
+                        <div class="playlist-mood emotional">for the last train home</div>
+                    </article>
+                    <article class="playlist-card card">
+                        <div class="playlist-cover">
+                            <img src="assets/images/playlists/cover-3.jpg" alt="Cassette tape cover art: dim station platform lights, soft neon glow">
+                            <div class="playlist-play">▶</div>
+                        </div>
+                        <div class="playlist-title">station lights</div>
+                        <div class="playlist-mood emotional">dim platforms, warm echoes</div>
+                    </article>
+                    <article class="playlist-card card">
+                        <div class="playlist-cover">
+                            <img src="assets/images/playlists/cover-4.jpg" alt="Cassette tape cover art: analog textures, warm tape hiss aesthetic">
+                            <div class="playlist-play">▶</div>
+                        </div>
+                        <div class="playlist-title">analog hum</div>
+                        <div class="playlist-mood emotional">tape hiss and gentle chords</div>
+                    </article>
+                </div>
+                <p class="mt-m"><a href="playlists.html" class="nav-link">Continue down the track →</a></p>
+            </div>
+        </section>
+
+        <section id="featured-artists" class="section reveal" aria-labelledby="ar-title">
+            <div class="container">
+                <h2 id="ar-title" class="section-title">Platform Six Artists</h2>
+                <div class="artist-grid">
+                    <figure class="artist-poster card">
+                        <img src="assets/images/artists/portrait-1.jpg" alt="Indie artist portrait in dim purple station light">
+                    </figure>
+                    <figure class="artist-poster card">
+                        <img src="assets/images/artists/portrait-2.jpg" alt="Indie artist portrait in dim purple station light">
+                    </figure>
+                    <figure class="artist-poster card">
+                        <img src="assets/images/artists/portrait-3.jpg" alt="Indie artist portrait in dim purple station light">
+                    </figure>
+                    <figure class="artist-poster card">
+                        <img src="assets/images/artists/portrait-4.jpg" alt="Indie artist portrait in dim purple station light">
+                    </figure>
+                </div>
+                <p class="artist-caption mt-m emotional">Tap a poster — step into their story</p>
+                <p class="mt-m"><a href="artists.html" class="nav-link">Step inside →</a></p>
+            </div>
+        </section>
+
+        <section id="community" class="section reveal" aria-labelledby="co-title">
+            <div class="container">
+                <h2 id="co-title" class="section-title">From the Community</h2>
+                <div class="notes">
+                    <article class="note">
+                        <p>“This song found me at the right time.”</p>
+                        <span class="heart">♥</span>
+                    </article>
+                    <article class="note">
+                        <p>“Soundtrack for a quiet night alone on the last train home.”</p>
+                        <span class="heart">♥</span>
+                    </article>
+                    <article class="note">
+                        <p>“Windows fogged, tapes spinning, city breathing slow.”</p>
+                        <span class="heart">♥</span>
+                    </article>
+                </div>
+                <p class="mt-m"><a href="community.html" class="nav-link">Read the wall →</a></p>
+            </div>
+        </section>
+
+        <div class="ambient-toggle">
+            <button id="ambientToggle" aria-pressed="false" aria-label="Toggle ambient audio">turn on the night</button>
+            <audio id="ambientAudio" src="assets/audio/samples/sample-1.mp3" loop preload="none"></audio>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container pad-l">
+            <p class="cta">End of the line? <a href="map.html">Explore the Station Map →</a></p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="globalModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal" role="document">
+            <button class="modal-close w3-button" aria-label="Close" data-modal-close>✕</button>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

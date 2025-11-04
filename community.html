@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Station Wall - Echo Station</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:ital,wght@0,400;0,600;1,400&family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="w3-bar w3-transparent" id="main-nav" role="navigation">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+            <a class="logo w3-bar-item" href="index.html" aria-label="Echo Station home">
+                <strong class="letter-loose">Echo Station</strong>
+            </a>
+            <button class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" aria-expanded="false" aria-controls="mobileMenu" id="menuToggle">Menu</button>
+            <nav class="w3-bar-item w3-hide-small" aria-label="Primary">
+                <a class="w3-bar-item nav-link" href="index.html">Home</a>
+                <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+                <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+                <a class="w3-bar-item nav-link" href="community.html">Community</a>
+                <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+            </nav>
+        </div>
+        <div id="mobileMenu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium glass">
+            <a class="w3-bar-item nav-link" href="index.html">Home</a>
+            <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+            <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+            <a class="w3-bar-item nav-link" href="community.html">Community</a>
+            <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <section class="wall wall--community grain section" aria-label="The Station Wall header">
+            <div class="container header-notes">
+                <h1 class="graffiti-title spray-soft">THE STATION WALL</h1>
+                <p class="emotional">"A collection of notes, playlists, and late-night thoughts from our travelers."</p>
+                <p class="emotional scribble-underline mt-s">leave a thought. find a friend on the same track.</p>
+                <div class="write-note mt-l">
+                    <button class="write-btn" id="openWrite">Write a note</button>
+                    <span class="hand-arrow">← add yours</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="notes-title">
+            <div class="container">
+                <h2 id="notes-title" class="section-title">Notes</h2>
+                <div class="note-feed" id="noteFeed"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container pad-l">
+            <p class="cta">End of the line? <a href="map.html">Explore the Station Map →</a></p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="globalModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal" role="document">
+            <button class="modal-close" aria-label="Close" data-modal-close>✕</button>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

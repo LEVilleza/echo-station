@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Six - Echo Station</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:ital,wght@0,400;0,600;1,400&family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="w3-bar w3-transparent" id="main-nav" role="navigation">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+            <a class="logo w3-bar-item" href="index.html" aria-label="Echo Station home">
+                <strong class="letter-loose">Echo Station</strong>
+            </a>
+            <button class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" aria-expanded="false" aria-controls="mobileMenu" id="menuToggle">Menu</button>
+            <nav class="w3-bar-item w3-hide-small" aria-label="Primary">
+                <a class="w3-bar-item nav-link" href="index.html">Home</a>
+                <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+                <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+                <a class="w3-bar-item nav-link" href="community.html">Community</a>
+                <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+            </nav>
+        </div>
+        <div id="mobileMenu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium glass">
+            <a class="w3-bar-item nav-link" href="index.html">Home</a>
+            <a class="w3-bar-item nav-link" href="playlists.html">Playlists</a>
+            <a class="w3-bar-item nav-link" href="artists.html">Artists</a>
+            <a class="w3-bar-item nav-link" href="community.html">Community</a>
+            <a class="w3-bar-item nav-link" href="map.html">Station Map</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <section class="wall wall--brick grain section" aria-label="Platform Six header">
+            <div class="container">
+                <h1 class="graffiti-title spray-soft jitter">PLATFORM SIX</h1>
+                <p class="graffiti-sub spray-soft">The minds behind the music</p>
+                <p class="emotional mt-m">Tap a poster — step into their story →</p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="poster-title" style="--artists-bg-image: url('assets/images/artists-background.png');">
+            <div class="container">
+                <h2 id="poster-title" class="section-title">Artists</h2>
+                <div class="poster-grid">
+                    <!-- PinkPantheress -->
+                    <figure class="poster" data-type="artist"
+                        data-name="PinkPantheress"
+                        data-genre="bedroom pop"
+                        data-image="assets/images/artists/pinkpantheress.jpg"
+                        data-synopsis="London-born songwriter blending bedroom-pop intimacy with UK garage pulses — diary-like vocals floating over nostalgic, hazy beats for midnight train rides and quiet teen heartbreak."
+                        data-tracks="Boy's a liar, Just for me, Break It Off"
+                        data-spotify="https://open.spotify.com/artist/20rZZJ5Y3QxJI2DMfbEgNl">
+                        <img src="assets/images/artists/pinkpantheress.jpg" alt="Indie artist portrait in dim purple station light: PinkPantheress">
+                    </figure>
+
+                   <!-- Arctic Monkeys -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Arctic Monkeys"
+                        data-genre="indie rock"
+                        data-image="assets/images/artists/arcticmonkeys.jpg"
+                        data-synopsis="Sheffield storytellers mixing late-night city realism with swagger and nostalgia — from basement indie frenzy to sleek lounge-noir crooning."
+                        data-tracks="505, Do I Wanna Know?, I Bet You Look Good on the Dancefloor"
+                        data-spotify="https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH">
+                    <img src="assets/images/artists/arcticmonkeys.jpg" alt="Indie artist portrait in dim purple station light: Arctic Monkeys">
+                    </figure>
+
+                    <!-- Bon Iver -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Bon Iver"
+                        data-genre="indie folk"
+                        data-image="assets/images/artists/boniver.jpg"
+                        data-synopsis="Born in winter isolation, Bon Iver crafts emotional landscapes — heartbreak dissolving into experimental warmth and snowy quiet."
+                        data-tracks="Holocene, Skinny Love, Perth"
+                        data-spotify="https://open.spotify.com/artist/4LEiUm1SRbFMgfqnQTwUbQ">
+                    <img src="assets/images/artists/boniver.jpg" alt="Indie artist portrait in dim purple station light: Bon Iver">
+                    </figure>
+
+                    <!-- The Smiths -->
+                    <figure class="poster" data-type="artist"
+                        data-name="The Smiths"
+                        data-genre="indie rock"
+                        data-image="assets/images/artists/thesmiths.jpg"
+                        data-synopsis="Manchester icons whose jangly guitars and poetic melancholy shaped indie forever — tender alienation in rainy English streets."
+                        data-tracks="There Is a Light That Never Goes Out, This Charming Man, Please Please Please Let Me Get What I Want"
+                        data-spotify="https://open.spotify.com/artist/3iOEQQnEV30o1Po7gPtd46">
+                    <img src="assets/images/artists/thesmiths.jpg" alt="Indie artist portrait in dim purple station light: The Smiths">
+                    </figure>
+
+                    <!-- Mitski -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Mitski"
+                        data-genre="indie rock"
+                        data-image="assets/images/artists/mitski.jpg"
+                        data-synopsis="Japanese-American songwriter blending vulnerability and theatrical longing — aching confessions over swelling indie drama."
+                        data-tracks="Nobody, First Love / Late Spring, Washing Machine Heart"
+                        data-spotify="https://open.spotify.com/artist/2uYWxilOVlUdk4oV9DvwqK">
+                    <img src="assets/images/artists/mitski.jpg" alt="Indie artist portrait in dim purple station light: Mitski">
+                    </figure>
+
+                    <!-- Julien Baker -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Julien Baker"
+                        data-genre="indie folk"
+                        data-image="assets/images/artists/julienbaker.jpg"
+                        data-synopsis="Southern-born songwriter whose trembling vocals and intimate confessions feel like reading someone’s private notebook at 2AM."
+                        data-tracks="Appointments, Turn Out the Lights, Sprained Ankle"
+                        data-spotify="https://open.spotify.com/artist/12zbUHbPHL5DGuJtiUfsip">
+                    <img src="assets/images/artists/julienbaker.jpg" alt="Indie artist portrait in dim purple station light: Julien Baker">
+                    </figure>
+
+                    <!-- Clairo -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Clairo"
+                        data-genre="indie pop"
+                        data-image="assets/images/artists/clairo.jpg"
+                        data-synopsis="From bedroom demos to orchestral indie — soft vocals, gentle vulnerability, emotional honesty wrapped in warm lo-fi light."
+                        data-tracks="Sofia, Bags, Pretty Girl"
+                        data-spotify="https://open.spotify.com/artist/3l0CmX0FuQjFxr8SK7Vqag">
+                    <img src="assets/images/artists/clairo.jpg" alt="Indie artist portrait in dim purple station light: Clairo">
+                    </figure>
+
+                    <!-- Hotel Ugly -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Hotel Ugly"
+                        data-genre="indie r&b"
+                        data-image="assets/images/artists/hotelugly.jpg"
+                        data-synopsis="Houston duo turning internet heartbreak into lo-fi indie-R&B confessions — warm bass, soft beats, and late-night texts you never sent. Music for neon bedrooms and 3AM scrolling."
+                        data-tracks="Shut Up My Moms Calling, If You Were a Friend, Action Figures Fighting"
+                        data-spotify="https://open.spotify.com/artist/4NfhvduYMWRM5Vloqr5Dxc">
+                        <img src="assets/images/artists/hotelugly.jpg" alt="Indie artist portrait in dim purple station light: Hotel Ugly">
+                    </figure>
+
+
+                    <!-- Beach House -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Beach House"
+                        data-genre="dream pop"
+                        data-image="assets/images/artists/beachhouse.jpg"
+                        data-synopsis="Baltimore dream-pop duo weaving hazy synths and soft-focus memory — songs that glow like nostalgia in warm streetlight."
+                        data-tracks="Space Song, Myth, Lazuli"
+                        data-spotify="https://open.spotify.com/artist/56ZTgzPBDge0OvCGgMO3OY">
+                    <img src="assets/images/artists/beachhouse.jpg" alt="Indie artist portrait in dim purple station light: Beach House">
+                    </figure>
+
+                    <!-- The 1975 -->
+                    <figure class="poster" data-type="artist"
+                        data-name="The 1975"
+                        data-genre="indie pop"
+                        data-image="assets/images/artists/the1975.jpg"
+                        data-synopsis="Neon-lit emotional indie blending nostalgia, suburban melancholy, and cinematic synths — the soundtrack of late-night wandering."
+                        data-tracks="Somebody Else, Love It If We Made It, If You're Too Shy"
+                        data-spotify="https://open.spotify.com/artist/3mIj9lX2MWuHmhNCA7LSCW">
+                    <img src="assets/images/artists/the1975.jpg" alt="Indie artist portrait in dim purple station light: The 1975">
+                    </figure>
+
+                    <!-- Beabadoobee -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Beabadoobee"
+                        data-genre="indie pop"
+                        data-image="assets/images/artists/beabadoobee.jpg"
+                        data-synopsis="Bedroom-pop dreamer turned grunge-tinged indie force — soft sentimental worlds tinted with '90s warmth and youthful ache."
+                        data-tracks="Coffee, Glue Song, Care"
+                        data-spotify="https://open.spotify.com/artist/3wcj11K77LjEY1PkEazffa">
+                    <img src="assets/images/artists/beabadoobee.jpg" alt="Indie artist portrait in dim purple station light: Beabadoobee">
+                    </figure>
+
+                    <!-- Cigarettes After Sex -->
+                    <figure class="poster" data-type="artist"
+                        data-name="Cigarettes After Sex"
+                        data-genre="ambient pop"
+                        data-image="assets/images/artists/cas.jpg"
+                        data-synopsis="Whisper-soft slow-motion romance — ambient pop built from gentle longing, night air, and the quiet electricity of memory."
+                        data-tracks="Apocalypse, Nothing's Gonna Hurt You Baby, Heavenly"
+                        data-spotify="https://open.spotify.com/artist/1QAJqy2dA3ihHBFIHRphZj">
+                    <img src="assets/images/artists/cas.jpg" alt="Indie artist portrait in dim purple station light: Cigarettes After Sex">
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container pad-l">
+            <p class="cta">End of the line? <a href="map.html">Explore the Station Map →</a></p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="globalModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal" role="document">
+            <button class="modal-close" aria-label="Close" data-modal-close>✕</button>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
