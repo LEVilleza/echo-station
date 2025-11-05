@@ -320,22 +320,36 @@
         const title = el.getAttribute('data-title') || 'Mixtape';
         const mood = el.getAttribute('data-mood') || '';
         const image = el.getAttribute('data-image') || '';
+        const desc = el.getAttribute('data-description') || el.getAttribute('data-synopsis') || 'A late-night journey through soft synth haze and hazier memory.';
+        const spotifyUrl = el.getAttribute('data-spotify') || '';
+        const youtubeUrl = el.getAttribute('data-youtube') || '';
+        const tracksRaw = el.getAttribute('data-tracks') || '';
+        let tracks = [];
+        if(tracksRaw){
+            try{ tracks = JSON.parse(tracksRaw); }
+            catch(e){ tracks = tracksRaw.split(',').map(t => t.trim()).filter(Boolean); }
+        }
+        if(tracks.length === 0){
+            tracks = ['Echoes Under Neon', 'Last Platform Light', 'Rolling Midnight', 'Rain On The Window'];
+        }
+        const tracksHTML = tracks.map(t => `<li>${t}</li>`).join('');
+        const spotifyBtn = `<button class="service-btn spotify" data-service="spotify" data-title="${title}"${spotifyUrl ? ` data-spotify-url="${encodeURIComponent(spotifyUrl)}"` : ''}>Play on Spotify</button>`;
+        const youtubeBtn = `<button class="service-btn youtube" data-service="youtube" data-title="${title}"${youtubeUrl ? ` data-youtube-url="${encodeURIComponent(youtubeUrl)}"` : ''}>Play on YouTube</button>`;
         const content = `
             <div class="drawer">
                 <div class="art-lg"><img src="${image}" alt="Cassette tape cover art: ${title}"></div>
-                <div class="meta">
+                <div class="desc">
                     <h3>${title}</h3>
-                    <p class="emotional">A late-night journey through soft synth haze and hazier memory.</p>
+                    <p class="emotional">${desc}</p>
                     <p class="muted">${mood}</p>
+                </div>
+                <div class="content">
                     <ol class="tracks">
-                        <li>Echoes Under Neon</li>
-                        <li>Last Platform Light</li>
-                        <li>Rolling Midnight</li>
-                        <li>Rain On The Window</li>
+                        ${tracksHTML}
                     </ol>
                     <div class="service-actions">
-                        <button class="service-btn spotify" data-service="spotify" data-title="${title}">Play on Spotify</button>
-                        <button class="service-btn youtube" data-service="youtube" data-title="${title}">Play on YouTube</button>
+                        ${spotifyBtn}
+                        ${youtubeBtn}
                     </div>
                 </div>
             </div>`;
@@ -369,10 +383,12 @@
         const content = `
             <div class="drawer">
                 <div class="art-lg"><img src="${image}" alt="Indie artist portrait in dim purple station light: ${name}"></div>
-                <div class="meta">
+                <div class="desc">
                     <h3>${name}</h3>
                     <p class="emotional">${synopsis}</p>
                     <p class="muted">${genre}</p>
+                </div>
+                <div class="content">
                     <ol class="tracks">
                         ${tracksHTML}
                     </ol>
@@ -398,8 +414,10 @@
             const service = serviceBtn.getAttribute('data-service');
             const title = serviceBtn.getAttribute('data-title') || 'Playlist';
             const spotifyUrl = serviceBtn.getAttribute('data-spotify-url');
+            const youtubeUrl = serviceBtn.getAttribute('data-youtube-url');
             const pretty = service === 'spotify' ? 'Spotify' : 'YouTube';
-            const urlDisplay = spotifyUrl ? decodeURIComponent(spotifyUrl) : '';
+            const chosenUrl = service === 'spotify' ? spotifyUrl : youtubeUrl;
+            const urlDisplay = chosenUrl ? decodeURIComponent(chosenUrl) : '';
             const urlText = urlDisplay ? `<p class="muted" style="margin-top:8px; font-size:12px; word-break:break-all;">${urlDisplay}</p>` : '';
             window.EchoModal.open(`
                 <div class="pad-m">
