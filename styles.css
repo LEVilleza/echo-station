@@ -1,3 +1,75 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Space Grotesk Regular"),
+       url("assets/fonts/SpaceGrotesk-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Space Grotesk SemiBold"),
+       url("assets/fonts/SpaceGrotesk-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Space Grotesk Bold"),
+       url("assets/fonts/SpaceGrotesk-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Inter Regular"),
+       url("assets/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Inter SemiBold"),
+       url("assets/fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Inter Italic"),
+       url("assets/fonts/Inter-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Urbanist Regular"),
+       url("assets/fonts/Urbanist-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Urbanist Bold"),
+       url("assets/fonts/Urbanist-Bold.woff2") format("woff2");
+}
+
 :root{
   /* palette */
   --bg-900:#0b0c10;
