@@ -253,8 +253,7 @@ textarea:focus-visible{ outline: 2px solid var(--accent-2); outline-offset: 3px;
     radial-gradient(100% 100% at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
     transition: opacity .4s ease; }
 .hero .content{ position:relative; text-align:center; padding: var(--space-xl) var(--space-m); z-index:1; }
-.hero .title{ composes: hero-title; letter-spacing: var(--loose-letter); filter: drop-shadow(0 6px 24px rgba(0,0,0,0.6)); }
-.hero .title{ font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--loose-letter); font-size: clamp(40px,10vw,120px); }
+.hero .title{ font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--loose-letter); font-size: clamp(40px,10vw,120px); filter: drop-shadow(0 6px 24px rgba(0,0,0,0.6)); }
 .hero .title.text-glow{ text-shadow:0 0 20px rgba(210, 107, 99, 0.15), 0 0 60px rgba(82, 115, 255, 0.15); }
 .hero .subtitle{ margin-top: var(--space-m); color: var(--muted); font-style: italic; font-size: clamp(14px,2.4vw,18px); }
 .hero .ctas{ margin-top: var(--space-l); display:flex; gap: 14px; align-items:center; justify-content:center; flex-wrap: wrap; }
