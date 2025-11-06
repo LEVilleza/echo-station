@@ -1,5 +1,4 @@
 // Echo Station – Global JS Utilities
-// Minimal motion, soft interactions
 
 (function(){
     const doc = document;
@@ -186,7 +185,7 @@
                     ${n.img ? `<img src="${n.img}" alt="attached image" loading="lazy" onerror="this.style.display='none'">` : ''}
                     ${n.link ? `<a href="#" data-note-link="${encodeURIComponent(n.link)}">Open playlist link</a>` : ''}
                 </div>` : ''}
-                <div class="icons">♥</div>
+                
             </article>`).join('');
     }
     seedNotesIfEmpty();
