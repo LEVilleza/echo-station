@@ -78,7 +78,6 @@
   --muted: #cfcac1;
   --accent-1: #d36b63; /* rose */
   --accent-2: #5273ff; /* blue */
-  --accent-3: #dac737; /* gold */
   --soft-shadow: 0 8px 28px rgba(0,0,0,0.6);
   --soft-border: rgba(255,255,255,0.06);
   --glass: rgba(18,19,24,0.6);
@@ -367,7 +366,7 @@ textarea:focus-visible {
   margin-bottom: var(--space-l);
 }
 
-/* ========== HOME / HERO ========== */
+/* ========== HOME PAGE HERO ========== */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -555,6 +554,19 @@ textarea:focus-visible {
   margin-top: 10px;
 }
 
+/* force images to fill poster cards */
+#featured-artists .artist-poster {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+#featured-artists .artist-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* community notes */
 .notes {
   display: grid;
@@ -586,7 +598,7 @@ textarea:focus-visible {
   font-style: italic;
 }
 
-/* ========== PAGES: PLAYLISTS & ARTISTS ========== */
+/* ========== PLAYLISTS & ARTISTS PAGE ========== */
 /* Wall backdrops */
 .wall {
   position: relative;
@@ -841,6 +853,132 @@ textarea:focus-visible {
   border-color: rgba(255,78,69,0.35);
 }
 
+/* Artists section background image support */
+.section[aria-labelledby="poster-title"] {
+  background-image: var(--artists-bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.section[aria-labelledby="poster-title"]:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 12, 16, 0.85);
+  z-index: 0;
+}
+
+.section[aria-labelledby="poster-title"] > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Poster gallery for artists */
+.poster-grid {
+  column-count: 4;
+  column-gap: 6px;
+}
+
+.poster-grid > * {
+  break-inside: avoid;
+}
+
+@media (max-width: 1200px) {
+  .poster-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  .poster-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .poster-grid {
+    column-count: 1;
+  }
+}
+
+.poster {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #eae6dd;
+  transition: transform .35s ease, box-shadow .3s ease;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 6px 0;
+  padding: 0;
+  --r: 0deg;
+  --s: 1;
+  --tx: 0px;
+  --ty: 0px;
+  --z: 1;
+  transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(var(--s));
+  z-index: var(--z);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  border: 3px solid rgba(236,233,227,0.85);
+}
+
+.poster:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
+  box-shadow: inset 0 0 14px rgba(0,0,0,0.10);
+}
+
+.poster:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 6px;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  background:
+    radial-gradient(80% 80% at 50% 50%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.08) 100%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 10 10"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" fill="#bfb9ac" opacity="0.28"/></svg>');
+}
+
+.poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: contrast(0.9) saturate(0.85);
+  border-radius: 6px;
+}
+
+.poster:hover {
+  transform: translate(calc(var(--tx)), calc(var(--ty) - 4px)) rotate(var(--r)) scale(calc(var(--s) * 1.02));
+  box-shadow: 0 18px 42px rgba(0,0,0,0.55);
+  z-index: 9;
+}
+
+/* Randomize poster position and orientation using n-th child */
+.poster:nth-child(12n+1) { --r: -1.6deg; --s: 0.98; --tx: -3px; --ty: 1px; --z: 1; }
+.poster:nth-child(12n+2) { --r: 1.1deg; --s: 1.03; --tx: 2px; --ty: -1px; --z: 2; }
+.poster:nth-child(12n+3) { --r: -0.5deg; --s: 1.00; --tx: -1px; --ty: 0px; --z: 1; }
+.poster:nth-child(12n+4) { --r: 1.6deg; --s: 0.97; --tx: 3px; --ty: 3px; --z: 1; }
+.poster:nth-child(12n+5) { --r: -1.2deg; --s: 1.02; --tx: 0px; --ty: 2px; --z: 2; }
+.poster:nth-child(12n+6) { --r: 0.7deg; --s: 0.99; --tx: -2px; --ty: -2px; --z: 1; }
+.poster:nth-child(12n+7) { --r: -0.9deg; --s: 1.04; --tx: 1px; --ty: -1px; --z: 2; }
+.poster:nth-child(12n+8) { --r: 1.3deg; --s: 0.965; --tx: 2px; --ty: 1px; --z: 1; }
+.poster:nth-child(12n+9) { --r: -1.8deg; --s: 1.01; --tx: -3px; --ty: 2px; --z: 2; }
+.poster:nth-child(12n+10) { --r: 0.4deg; --s: 0.985; --tx: -1px; --ty: 0px; --z: 1; }
+.poster:nth-child(12n+11) { --r: 1.0deg; --s: 1.02; --tx: 2px; --ty: -2px; --z: 2; }
+.poster:nth-child(12n) { --r: -0.7deg; --s: 0.975; --tx: 0px; --ty: 3px; --z: 1; }
+
+
+
 /* ========== COMMUNITY PAGE ========== */
 .wall--community {
   background-image:
@@ -989,7 +1127,7 @@ textarea:focus-visible {
   color: var(--muted);
 }
 
-/* Write modal sheet */
+/* Note input modal sheet */
 .sheet {
   background: #efece3;
   color: #111;
@@ -1129,138 +1267,3 @@ textarea:focus-visible {
   font-style: italic;
 }
 
-/* Artists section background image support */
-.section[aria-labelledby="poster-title"] {
-  background-image: var(--artists-bg-image, none);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  position: relative;
-}
-
-.section[aria-labelledby="poster-title"]:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(11, 12, 16, 0.85);
-  z-index: 0;
-}
-
-.section[aria-labelledby="poster-title"] > .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Poster gallery for artists */
-.poster-grid {
-  column-count: 4;
-  column-gap: 6px;
-}
-
-.poster-grid > * {
-  break-inside: avoid;
-}
-
-@media (max-width: 1200px) {
-  .poster-grid {
-    column-count: 3;
-  }
-}
-
-@media (max-width: 800px) {
-  .poster-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 520px) {
-  .poster-grid {
-    column-count: 1;
-  }
-}
-
-.poster {
-  position: relative;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #eae6dd;
-  transition: transform .35s ease, box-shadow .3s ease;
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 6px 0;
-  padding: 0;
-  --r: 0deg;
-  --s: 1;
-  --tx: 0px;
-  --ty: 0px;
-  --z: 1;
-  transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(var(--s));
-  z-index: var(--z);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  border: 3px solid rgba(236,233,227,0.85);
-}
-
-.poster:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: 6px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
-  box-shadow: inset 0 0 14px rgba(0,0,0,0.10);
-}
-
-.poster:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: 6px;
-  opacity: 0.6;
-  mix-blend-mode: multiply;
-  background:
-    radial-gradient(80% 80% at 50% 50%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.08) 100%),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 10 10"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" fill="#bfb9ac" opacity="0.28"/></svg>');
-}
-
-.poster img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  filter: contrast(0.9) saturate(0.85);
-  border-radius: 6px;
-}
-
-.poster:hover {
-  transform: translate(calc(var(--tx)), calc(var(--ty) - 4px)) rotate(var(--r)) scale(calc(var(--s) * 1.02));
-  box-shadow: 0 18px 42px rgba(0,0,0,0.55);
-  z-index: 9;
-}
-
-.poster:nth-child(12n+1) { --r: -1.6deg; --s: 0.98; --tx: -3px; --ty: 1px; --z: 1; }
-.poster:nth-child(12n+2) { --r: 1.1deg; --s: 1.03; --tx: 2px; --ty: -1px; --z: 2; }
-.poster:nth-child(12n+3) { --r: -0.5deg; --s: 1.00; --tx: -1px; --ty: 0px; --z: 1; }
-.poster:nth-child(12n+4) { --r: 1.6deg; --s: 0.97; --tx: 3px; --ty: 3px; --z: 1; }
-.poster:nth-child(12n+5) { --r: -1.2deg; --s: 1.02; --tx: 0px; --ty: 2px; --z: 2; }
-.poster:nth-child(12n+6) { --r: 0.7deg; --s: 0.99; --tx: -2px; --ty: -2px; --z: 1; }
-.poster:nth-child(12n+7) { --r: -0.9deg; --s: 1.04; --tx: 1px; --ty: -1px; --z: 2; }
-.poster:nth-child(12n+8) { --r: 1.3deg; --s: 0.965; --tx: 2px; --ty: 1px; --z: 1; }
-.poster:nth-child(12n+9) { --r: -1.8deg; --s: 1.01; --tx: -3px; --ty: 2px; --z: 2; }
-.poster:nth-child(12n+10) { --r: 0.4deg; --s: 0.985; --tx: -1px; --ty: 0px; --z: 1; }
-.poster:nth-child(12n+11) { --r: 1.0deg; --s: 1.02; --tx: 2px; --ty: -2px; --z: 2; }
-.poster:nth-child(12n) { --r: -0.7deg; --s: 0.975; --tx: 0px; --ty: 3px; --z: 1; }
-
-/* Home page artist previews: force images to fill poster cards */
-#featured-artists .artist-poster {
-  aspect-ratio: 3/4;
-  overflow: hidden;
-}
-
-#featured-artists .artist-poster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}

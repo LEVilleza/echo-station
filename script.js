@@ -24,7 +24,7 @@
         });
     })();
 
-    // Smooth scrolling helper (for in-page anchors)
+    // Smooth scrolling helper
     function smoothScrollTo(target) {
         try {
             doc.querySelector(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -134,7 +134,7 @@
     }
     window.EchoStore = { set: storageSet, get: storageGet };
 
-    // Simple local data loader (demo only)
+    // Simple local data loader
     function loadLocalData(payload) {
         if (typeof payload === 'string') {
             try {
@@ -148,7 +148,7 @@
     }
     window.EchoData = { load: loadLocalData };
 
-    // Optional subtle parallax for elements with data-parallax
+    // subtle parallax for elements with data-parallax attribute
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReduced) {
         const parallaxNodes = Array.from(doc.querySelectorAll('[data-parallax]'));
@@ -163,7 +163,7 @@
         }
     }
 
-    // Hero focus dim when hovering content
+    // Dim focus on hero when hovering content
     const hero = doc.querySelector('.hero');
     const heroContent = hero?.querySelector('.content');
     if (hero && heroContent) {
@@ -171,7 +171,7 @@
         heroContent.addEventListener('mouseleave', () => hero.classList.remove('focus'));
     }
 
-    // COMMUNITY: client-side notes
+    // COMMUNITY: client-side notes preloaded notes
     const feedEl = doc.getElementById('noteFeed');
     function getNotes() { return window.EchoStore.get('communityNotes', []); }
     function setNotes(arr) { window.EchoStore.set('communityNotes', arr); }
@@ -221,7 +221,6 @@
                     </div>
                 </div>
             `);
-            // defer to allow DOM inside modal
             setTimeout(() => {
                 const submit = doc.getElementById('noteSubmit');
                 submit?.addEventListener('click', async () => {
@@ -249,7 +248,7 @@
                         errEl.style.display = 'none';
                         errEl.textContent = '';
                     }
-                    // soft existence check for image: try to load, if it fails, omit the image but still post
+                    // checks if image exists: try to load image, if it fails, hide image but still post note
                     async function imageExists(url) {
                         return await new Promise((resolve) => {
                             if (!url) return resolve(false);
@@ -466,7 +465,7 @@
             return;
         }
     });
-    // Reveal on scroll (fade-in)
+    // Reveal on scroll (fade-in animation)
     const toReveal = Array.from(doc.querySelectorAll('.reveal'));
     if ('IntersectionObserver' in window && toReveal.length) {
         const io = new IntersectionObserver((entries) => {
@@ -482,7 +481,7 @@
         toReveal.forEach(el => el.classList.add('revealed'));
     }
 
-    // Ambient audio toggle (off by default)
+    // Toggle train ambient audio (off by default)
     const ambientBtn = doc.getElementById('ambientToggle');
     const ambientAudio = doc.getElementById('ambientAudio');
     if (ambientBtn && ambientAudio instanceof HTMLAudioElement) {
